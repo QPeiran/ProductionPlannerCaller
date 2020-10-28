@@ -1,3 +1,4 @@
 ignoreFiles/
 *.xlsx
 *.csv
+*.pbix
