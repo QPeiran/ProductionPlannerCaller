@@ -8,6 +8,8 @@ verify_ssl = true
 [packages]
 pandas = "*"
 jupyter = "*"
+pyspark = "*"
+findspark = "*"
 
 [requires]
 python_version = "3.8"
