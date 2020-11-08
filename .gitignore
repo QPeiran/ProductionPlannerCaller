@@ -2,3 +2,4 @@ ignoreFiles/
 *.xlsx
 *.csv
 *.pbix
+Pipfile.lock
