@@ -10,6 +10,7 @@ pandas = "*"
 jupyter = "*"
 pyspark = "*"
 findspark = "*"
+requests = "*"
 
 [requires]
 python_version = "3.8"
