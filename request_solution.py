@@ -3,6 +3,8 @@ import requests
 
 planUrl = 'https://kittingline.azurewebsites.net/api/planning/PlanHistoryDate'
 
+localUrl = 'http://localhost:62805/api/planning/PlanHistoryDate'
+
 testUrl = 'https://httpbin.org/post'
 
 sampleDict = {
@@ -26,7 +28,9 @@ newHeaders = {'Content-type': 'application/json'}
 with open(r'./template input.json') as f:
     jsonData = json.load(f)
 
-response = requests.post(url = planUrl, json = jsonData, headers=newHeaders)
+response = requests.post(url = localUrl, 
+                         json = jsonData, 
+                         headers=newHeaders)
 
 
 print("Status code: ", response.status_code)
