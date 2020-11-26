@@ -17,7 +17,7 @@ sampleJsonData = json.dumps(sampleDict)
 # print(response.json())
 
 # solution 2:
-newHeaders = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+newHeaders = {'Content-type': 'application/json'}
 
 # response = requests.post(testUrl,
 #                          data=jsonData,
@@ -26,7 +26,7 @@ newHeaders = {'Content-type': 'application/json', 'Accept': 'text/plain'}
 with open(r'./template input.json') as f:
     jsonData = json.load(f)
 
-response = requests.post(url = planUrl, data = jsonData)
+response = requests.post(url = planUrl, json = jsonData, headers=newHeaders)
 
 
 print("Status code: ", response.status_code)
