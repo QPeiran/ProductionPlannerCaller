@@ -36,7 +36,7 @@ response = requests.post(url = planUrl,
 print("Status code: ", response.status_code)
 
 response_Json = response.json()
-print("Printing return data")
-print(response.text)
+with open('test_response.json', 'w') as outfile:
+    json.dump(response_Json, outfile)
 
 # print("Content-Type is ", response_Json['headers']['Content-Type'])
