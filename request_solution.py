@@ -25,18 +25,18 @@ newHeaders = {'Content-type': 'application/json'}
 #                          data=jsonData,
 #                          headers=newHeaders)
 
-with open(r'./template input.json') as f:
+with open(r'./API_post_v1.0.json') as f:
     jsonData = json.load(f)
 
-response = requests.post(url = localUrl, 
+response = requests.post(url = planUrl, 
                          json = jsonData, 
                          headers=newHeaders)
 
 
 print("Status code: ", response.status_code)
 
-# response_Json = response.json()
-# print("Printing Post JSON data")
-# print(response_Json['data'])
+response_Json = response.json()
+print("Printing return data")
+print(response.text)
 
 # print("Content-Type is ", response_Json['headers']['Content-Type'])
