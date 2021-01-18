@@ -13,16 +13,20 @@ def get_nest_data(token):
     }
 
     try:
-        init_res = requests.get('https://api.predicthq.com/v1/events/', headers=headers, allow_redirects=False)
-        if init_res.status_code == 307:
-            api_response = requests.get(init_res.headers['Location'], headers=headers, allow_redirects=False)
-            if  api_response.status_code == 200:
-                return api_response.json()
-        elif init_res.status_code == 200:
+        init_res = requests.get('https://api.predicthq.com/v1/events/', headers=headers)
+        if init_res.status_code == 200:
             return init_res.json()
     except Exception as ce:
         print(ce)
 
-
-
 print(get_nest_data(ACCESS_TOKEN))
+
+
+# response = requests.get(
+#     url="https://api.predicthq.com/v1/events/",
+#     headers={"authorization": "Bearer $ACCESS_TOKEN"},
+#     params={"q": "jazz"},
+#     allow_redirects=False
+# )
+
+# print(response.json())
